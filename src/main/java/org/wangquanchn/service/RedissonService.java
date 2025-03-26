@@ -23,7 +23,7 @@ public class RedissonService {
         value.add(new User("zhangsan", 18));
         bucket.set(value);
 
-        return value.toString();
+        return String.format("set %s success", value);
     }
 
     public String getBucket() {
@@ -31,7 +31,7 @@ public class RedissonService {
 
         List<User> value = bucket.get();
 
-        return value.toString();
+        return String.format("get GetBucketKey: %s", value);
     }
 
 }
